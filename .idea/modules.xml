@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RxToastUtils.iml" filepath="$PROJECT_DIR$/RxToastUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxtoast/rxtoast.iml" filepath="$PROJECT_DIR$/rxtoast/rxtoast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple/simple.iml" filepath="$PROJECT_DIR$/simple/simple.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">rxtoast</string>
+    <string name="exitapp_msg">再按一次退出~"</string>
+</resources>
