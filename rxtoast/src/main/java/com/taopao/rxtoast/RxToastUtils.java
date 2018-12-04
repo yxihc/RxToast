@@ -1,5 +1,6 @@
 package com.taopao.rxtoast;
 
+import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.annotation.CheckResult;
@@ -16,11 +17,51 @@ import android.widget.Toast;
  * @Use： toast工具类
  */
 public class RxToastUtils {
-    private static Context getContext() {
-        return RxToastConfig.getContext();
+    private RxToastUtils() {
+        throw new UnsupportedOperationException("You can't initialize me");
     }
 
+
+    //******************************************初始化框架***************************************
+    //static Application mApplication;
+    static Context sContext = null;
+
+    private static Context getContext() {
+        if (sContext == null) {
+            throw new IllegalStateException("RxToastUtils has not been initialized. Please add some code to the oncreate method of application : RxToastUtils.init(this);");
+        }
+        return sContext;
+    }
+
+    /**
+     * 初始化RxToastUtils，在Application中初始化
+     *
+     * @param application 应用的上下文
+     */
+    public static void init(Application application) {
+        sContext = application.getApplicationContext();
+//        mApplication = application;
+    }
+
+    public static class Config {
+        private Config() {
+
+        }
+
+        //        public static void Builder(Application application) {
+//            return this;
+//        }
+        public Config init(Application application) {
+            return this;
+        }
+    }
+
+    //******************************************初始化框架***************************************
+
+
     //******************************************系统 Toast 替代方法(立即显示无需等待)***************************************
+    //是否显示的短时长
+    static boolean isShort = true;
     /*
      * Toast 替代方法 ：立即显示无需等待
      */
@@ -32,8 +73,10 @@ public class RxToastUtils {
      * @param msg 显示内容
      */
     public static void show(String msg) {
-        if (sToast == null) {
-            sToast = Toast.makeText(getContext(), msg, Toast.LENGTH_LONG);
+        isShort = true;
+        //如果是空 或者当前不是显示的短时长那就重新初始化
+        if (sToast == null || !isShort) {
+            sToast = Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT);
         } else {
             sToast.setText(msg);
         }
@@ -52,29 +95,28 @@ public class RxToastUtils {
     /**
      * Toast 替代方法 ：立即显示无需等待
      *
-     * @param context  实体
-     * @param resId    String资源ID
-     * @param duration 显示时长
+     * @param resId String资源ID
      */
-    public static void show(Context context, int resId, int duration) {
-        show(context, context.getString(resId), duration);
+    public static void showLong(int resId) {
+        showLong(getContext().getString(resId));
     }
 
     /**
      * Toast 替代方法 ：立即显示无需等待
      *
-     * @param context  实体
-     * @param msg      要显示的字符串
-     * @param duration 显示时长
+     * @param msg 要显示的字符串
      */
-    public static void show(Context context, String msg, int duration) {
-        if (sToast == null) {
-            sToast = Toast.makeText(context, msg, duration);
+    private static void showLong(String msg) {
+        isShort = false;
+        if (sToast == null || isShort) {
+            sToast = Toast.makeText(getContext(), msg, Toast.LENGTH_LONG);
         } else {
             sToast.setText(msg);
         }
         sToast.show();
     }
+
+
     //******************************************系统 Toast 替代方法(立即显示无需等待)***************************************//
 
 
@@ -97,14 +139,14 @@ public class RxToastUtils {
     /**
      * 封装了Toast的方法 :需要等待
      */
-    public static void showLong(String str) {
+    public static void showLongWait(String str) {
         Toast.makeText(getContext(), str, Toast.LENGTH_LONG).show();
     }
 
     /**
      * 封装了Toast的方法 :需要等待
      */
-    public static void showLong(int resId) {
+    public static void showLongWait(int resId) {
         showLong(getContext().getString(resId));
     }
     //******************************************系统 Toast 替代方法(需要等待)****************************//
@@ -158,9 +200,7 @@ public class RxToastUtils {
         normal(getContext().getString(resId));
     }
 
-
     //******************************************自定义背景**********************************************//
-
     private static long mExitTime = 2000;
 
     /**

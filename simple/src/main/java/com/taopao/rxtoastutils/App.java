@@ -2,7 +2,7 @@ package com.taopao.rxtoastutils;
 
 import android.app.Application;
 
-import com.taopao.rxtoast.RxToastConfig;
+import com.taopao.rxtoast.RxToastUtils;
 
 /**
  * @Author：淘跑
@@ -13,7 +13,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        RxToastConfig.init(this);
+        RxToastUtils.init(this);
     }
-
 }

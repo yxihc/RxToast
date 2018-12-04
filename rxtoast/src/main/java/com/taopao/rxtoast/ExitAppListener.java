@@ -7,5 +7,4 @@ package com.taopao.rxtoast;
  */
 public interface ExitAppListener {
 
-
 }
