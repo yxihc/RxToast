@@ -11,5 +11,10 @@
         android:id="@+id/btn_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="显示5秒" />
+        android:text="第一个" />
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第一个" />
 </LinearLayout>
