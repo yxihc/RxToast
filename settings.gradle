@@ -1,1 +1,1 @@
-include ':simple', ':rxtoast', ':library', ':ToastUtils-master', ':toasty', ':Toasty-master'
+include ':simple', ':rxtoast'

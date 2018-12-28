@@ -8,12 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ToastUtils-master" />
-            <option value="$PROJECT_DIR$/Toasty-master" />
-            <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/rxtoast" />
             <option value="$PROJECT_DIR$/simple" />
-            <option value="$PROJECT_DIR$/toasty" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

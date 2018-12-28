@@ -3,12 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RxToast.iml" filepath="$PROJECT_DIR$/RxToast.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ToastUtils-master/ToastUtils-master.iml" filepath="$PROJECT_DIR$/ToastUtils-master/ToastUtils-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Toasty-master/Toasty-master.iml" filepath="$PROJECT_DIR$/Toasty-master/Toasty-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxtoast/rxtoast.iml" filepath="$PROJECT_DIR$/rxtoast/rxtoast.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple/simple.iml" filepath="$PROJECT_DIR$/simple/simple.iml" />
-      <module fileurl="file://$PROJECT_DIR$/toasty/toasty.iml" filepath="$PROJECT_DIR$/toasty/toasty.iml" />
     </modules>
   </component>
 </project>
