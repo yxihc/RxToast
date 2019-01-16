@@ -1,5 +1,6 @@
 package com.taopao.rxtoastutils;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -117,6 +118,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RxToast.show("这是当前的样式,这是一个特别长的Toast，老司机开车了，滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 滴~滴滴~ 点击次数" + x++);
     }
 
+    public void click7(View view) {
+        startActivity(new Intent(this, SnackBarActivity.class));
+    }
+
+
     private void initView() {
         mBtn1 = (Button) findViewById(R.id.btn_1);
         mBtn1.setOnClickListener(this);
@@ -155,4 +161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.taopao.rxtoastutils;
 import android.app.Application;
 import android.view.Gravity;
 
+import com.blankj.utilcode.util.Utils;
 import com.taopao.rxtoast.RxToast;
 
 /**
@@ -25,5 +26,7 @@ public class App extends Application {
                 .setZ(30)//Z轴的高度（阴影）
                 .setLineSpacing(1.5f)//设置行间距
                 .apply();//应用设置
+
+        Utils.init(this);
     }
 }
